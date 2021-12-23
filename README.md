@@ -24,7 +24,11 @@ When prompted, enter the root user password configured in the bootstrap node scr
 ## Provision/Create Kubernetes cluster with RKE
 To provision the cluster on the VMs, run the `rke config` command. You will be presented with a series of questions to which the answers will be used to declare the cluster config in a generated `cluster.yml` file upon completion. Alternatively, you can create the cluster.yml file and populate it with your desired configuration. Once you have the `cluster.yml` file, run the following command:
 ```
-rke up
+rke up 
+```
+If you have a pre-existing `cluster.yml` file, run the following command instead:
+```
+rke up --config cluster.yml
 ```
 When the cluster has been provisioned, the following files will be generated in the root directory:
 - cluster.rkestate - the cluster state file 
